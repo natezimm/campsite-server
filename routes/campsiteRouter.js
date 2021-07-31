@@ -63,7 +63,7 @@ campsiteRouter.route('/:campsiteId')
     .catch(err => next(err));
 })
 .delete((req, res, next) => {
-    Campsite.findByIdAndDelete(req.params.campsiteId)
+    Campsite.findByIdAndRemove(req.params.campsiteId)
     .then(response => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
